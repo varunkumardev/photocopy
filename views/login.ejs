@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- ========================================================================================================================== -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- angular cdn link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- ========================================================================================================================== -->
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <script src="/javascripts/main.js"></script>
+
+</head>
+
+<body ng-app="myapp" ng-controller="myctrl">
+    <div class=" login-reg-panel">
+        <div class="login-info-box">
+            <h2>Have an account?</h2>
+            <p>Login by clicking the below button</p>
+            <label id="label-register" for="log-reg-show">Login</label>
+            <input type="radio" name="active-log-panel" id="log-reg-show" checked="checked">
+        </div>
+
+        <div class="register-info-box">
+            <h2>Don't have an account?</h2>
+            <p>Kindly Register by clicking the below button</p>
+            <label id="label-login" for="log-login-show">Register</label>
+            <input type="radio" name="active-log-panel" id="log-login-show">
+        </div>
+
+        <div class="white-panel">
+            <div class="login-show">
+                <h2>LOGIN</h2>
+                <form action="">
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email" ng-model="log.Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password" ng-model="log.Password">
+                    </div>
+                    <button type="button" class="btn btn-success" ng-click="login(log)">Login</button>
+                </form>
+                <a href="">Forgot password?</a>
+            </div>
+            <div class="register-show">
+                <h2>REGISTER</h2>
+                <form action="">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="" placeholder="Enter Username:"
+                            ng-model="reg.Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="" placeholder="Enter mail id:"
+                            ng-model="reg.Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="" placeholder="Enter Password:"
+                            ng-model="reg.Password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="" placeholder="Confirm Your Password:"
+                            ng-model="reg.Confirm_Password" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" ng-click="register(reg)">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/javascripts/login.js"></script>
+
+</html>
