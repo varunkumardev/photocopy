@@ -1,0 +1,13 @@
+.form-control{
+    border: 1px solid black;
+}
+
+.form-group{
+    padding-left: 30px;
+
+}
+.hh{
+    text-align: center;
+    color: orangered;
+    padding-top: 10px;
+}

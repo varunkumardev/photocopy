@@ -14,6 +14,10 @@ router.get('/', function (req, res, next) {
 router.get('/dashboard', function (req, res, next) {
   res.render('dashboard');
 });
+
+router.get('/dataentry', function (req, res, next) {
+  res.render('dataentry');
+});
 // =====================================================registeration deatils inserting ================================================
 
 router.post("/register", function (req, res) {
