@@ -37,7 +37,7 @@ app.controller('myctrl', function ($scope, $http) {
         }).then(function (success) {
             console.log(success)
             $scope.log = {};
-            window.location.href = "/index"
+            window.location.href = "/dashboard"
         }, function (error) {
             alert(error)
         })
