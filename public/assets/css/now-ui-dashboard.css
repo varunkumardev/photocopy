@@ -4018,13 +4018,13 @@ Created using IcoMoon - icomoon.io
 .sidebar .logo .simple-text,
 .off-canvas-sidebar .logo .simple-text {
   text-transform: uppercase;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
   display: block;
   white-space: nowrap;
-  font-size: 1em;
+  font-size: 30px;
   color: #FFFFFF;
   text-decoration: none;
-  font-weight: 400;
+  font-weight:bolder;
   line-height: 30px;
   overflow: hidden;
 }
@@ -4102,7 +4102,7 @@ Created using IcoMoon - icomoon.io
 
 .sidebar[data-color="orange"]:after,
 .off-canvas-sidebar[data-color="orange"]:after {
-  background: #EE442B;
+  background: #FE5F37;
 }
 
 .sidebar[data-color="orange"] .nav li.active>a:not([data-toggle="collapse"]),
@@ -4209,7 +4209,7 @@ Created using IcoMoon - icomoon.io
   /* background-color: #141E30; */
   /* fallback for old browsers */
   background: -webkit-gradient(linear, left top, right top, from(#0c2646), color-stop(60%, #204065), to(#2a5788));
-  background: linear-gradient(to right, #0c2646 0%, #204065 60%, #2a5788 100%);
+  background: linear-gradient(to right, #96A8D8 0%, #204065 60%, #2a5788 100%);
   position: relative;
   overflow: hidden;
 }

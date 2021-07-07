@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Statistics</title>
+    <title>Dashboard</title>
     <meta content='width=device-width, initial-scale=1.0' name='viewport' />
 
     <!--     Fonts and icons     -->
@@ -17,13 +17,13 @@
     <!-- CSS Files -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
-    <link rel="stylesheet" href="/stylesheets/dataentry.css">
+    <!-- <link rel="stylesheet" href="/stylesheets/dashboard.css"> -->
     <script src="/javascripts/main.js"></script>
 
 </head>
 
 
-<body ng-app="myapp" ng-controller="myctrl">
+<body ng-app="myapp" ng-controller="myctrl" ng-init="getdata()">
     <!-- <div class="wrapper "> -->
 
     <!-- ========================================= Sidebar ==========================================-->
@@ -40,14 +40,14 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="/dataentry">
                         <i class="fas fa-database"></i>
                         <p>Statistics</p>
                     </a>
                 </li>
-                <li>
-                    <a href="/table">
+                <li class="active">
+                    <a href="/tablelist">
                         <i class="fas fa-table"></i>
                         <p>Table List</p>
                     </a>
@@ -71,8 +71,10 @@
     <!-- =========================================== // Sidebar end ======================================-->
 
     <div class="main-panel" id="main-panel">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute" style="padding-top: 25px">
+
+        <!-- =========================================== Navbar =========================================== -->
+
+        <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
             <div class="container-fluid">
                 <div class="navbar-wrapper">
                     <div class="navbar-toggle">
@@ -82,7 +84,7 @@
                             <span class="navbar-toggler-bar bar3"></span>
                         </button>
                     </div>
-                    <a class="navbar-brand" href="/dashboard"></a>
+                    <a class="navbar-brand" href="/dashboard">Dashboard</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                     aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -125,88 +127,35 @@
 
         <div class="panel-header panel-header-lg panel-header-sm" style="padding: 80px 0 30px 0;"></div></br>
 
-        <!-- ================================================== statistics =======================================================-->
-
-        <div class="container" style="background-color: wheat;margin-bottom: 80px;">
-            <h1 class="hh">Enter Details Of Each Person</h1>
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-5">
-                    <div class="form-group">
-                        <label class="control-label col-sm-10" for="date"><b>Date:</b></label>
-                        <div class="col-sm-10">
-                            <input type="date" class="form-control" name="date" ng-model="info.Date">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="form-group">
-                        <label class="control-label col-sm-10" for=""><b>Single Side Pages:</b></label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" placeholder="Enter Count" name=""
-                                ng-model="info.Single_Side_Pages">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-5">
-                    <div class="form-group">
-                        <label class="control-label col-sm-10" for=""><b>Double Side Pages:</b></label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" placeholder="Enter Count" name=""
-                                ng-model="info.Double_Side_Pages">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="form-group">
-                        <label class="control-label col-sm-10" for=""><b>Employee Name:</b></label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="Enter Name" name=""
-                                ng-model="info.Employee_Name">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-5">
-                    <div class="form-group">
-                        <label class="control-label col-sm-10" for=""><b>Employee Id:</b></label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="Enter Id" name=""
-                                ng-model="info.Employee_Id">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="form-group">
-                        <label class="control-label col-sm-10" for=""><b>Mobile Number:</b></label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" placeholder="Mobile Number" name=""
-                                ng-model="info.Mobile_Number">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-5" style="margin: 0 auto;">
-                    <div class="form-group">
-                        <div class="col-sm-offset-6 col-sm-10">
-                            <button type="button" class="btn btn-primary" ng-click="stat(info)">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- ================================================== statistics form ======================================================-->
+        <div class="container">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Sl_No</th>
+                        <th>Date</th>
+                        <th>Single Side Pages</th>
+                        <th>Double Side Pages</th>
+                        <th>Employee Name</th>
+                        <th>Employee Id</th>
+                        <th>Mobile Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in userdata">
+                        <td>{{$index+1}}</td>
+                        <td>{{x.Date}}</td>
+                        <td>{{x.Single_Side_Pages}}</td>
+                        <td>{{x.Double_Side_Pages}}</td>
+                        <td>{{x.Employee_Name}}</td>
+                        <td>{{x.Employee_Id}}</td>
+                        <td>{{x.Mobile_Number}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-
-        <!-- ==================================================//statistics form =================================================== -->
-
+        <!-- ================================================= //statistics form =================================================== -->
     </div>
-
 </body>
 
 <!--   Core JS Files   -->
