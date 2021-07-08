@@ -2,7 +2,6 @@ var app = angular.module('myapp', [])
 app.controller('myctrl', function ($scope, $http) {
     $scope.reg = {};
     $scope.log = {};
-    $scope.info = {};
     $scope.userdata = [];
 
     // var regx = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/
@@ -24,7 +23,7 @@ app.controller('myctrl', function ($scope, $http) {
                 console.log(success)
                 $scope.reg = {};
             }, function (error) {
-                alert('Email Already Exist Please Enter another Email')
+                alert('Please fill the below details correctly')
             })
         }
     }
@@ -43,26 +42,30 @@ app.controller('myctrl', function ($scope, $http) {
             $scope.log = {};
             window.location.href = "/dashboard"
         }, function (error) {
-            alert(error)
+            alert("Invalid Details")
         })
     }
 
     // ============================================== //login ==========================================
 
     // =========================================== statistics form ====================================
-
+    $scope.info = {};
     $scope.stat = function (val) {
-        $http({
-            method: 'post',
-            url: '/info',
-            data: val
-        }).then(function (success) {
-            alert('success')
-            $scope.fetch.push(val);
-            $scope.info = {};
-        }, function (error) {
-            alert(error)
-        })
+        if (val.Date == null || val.Single_Side_Pages == null || val.Double_Side_Pages == null || val.Employee_Name == null || val.Employee_Id == null || val.Mobile_Number == null) {
+            alert('Empty form can\'t be submitted ')
+        } else {
+            $http({
+                method: 'post',
+                url: '/inform',
+                data: val
+            }).then(function (success) {
+                $scope.info = {};
+                alert('success')
+                $scope.userdata.push(val);
+            }, function (error) {
+                alert(error)
+            })
+        }
     }
 
     // =========================================== //statistics form ====================================

@@ -1,6 +1,5 @@
 .form-control{
-    border: 1px solid rgb(156, 153, 153);
-    border-radius: 5px;
+    border: 1px solid rgb(160, 154, 154);
 }
 
 .form-group{
@@ -12,8 +11,3 @@
     color: orangered;
     padding-top: 10px;
 }
-
-/* .block{
-    float: right;
-    margin: 0 auto;
-} */

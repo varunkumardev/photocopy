@@ -94,7 +94,7 @@ router.post('/login', function (req, res) {
 // ========================================================== //login details==========================================================
 
 // ========================================================== Insert Tablelist ========================================================
-router.post("/info", function (req, res) {
+router.post("/inform", function (req, res) {
   if (req.session && req.session.user) {
     req.body.user = req.session.user.Username;
     req.body.Role = "user";
