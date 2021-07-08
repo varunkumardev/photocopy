@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var sessions = require("client-sessions");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -12,6 +13,16 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(sessions({
+  cookieName: 'session', // cookie name dictates the key name added to the request object
+  secret: 'blargadeeblfthutjtyjhndtbhjcfhnjkfvvdsdkrargblarg', // should be a large unguessable string
+   // how long the session will stay valid in ms
+   // duration of the cookie in milliseconds, defaults to duration above
+    ephemeral: false, // when true, cookie expires when the browser closes
+    httpOnly: true, // when true, cookie is not accessible from javascript
+    secure: false // when true, cookie will only be sent over SSL. use key 'secureProxy' instead if you handle SSL not in your node process
+}));
 
 app.use(logger('dev'));
 app.use(express.json());

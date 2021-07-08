@@ -26,6 +26,7 @@ router.get('/dashboard', function (req, res, next) {
 /* GET statistics page. */
 router.get('/dataentry', function (req, res, next) {
   if (req.session && req.session.user) {
+    console.log(req.session.user)
     res.render('dataentry');
   } else {
     req.session.reset();
@@ -36,6 +37,7 @@ router.get('/dataentry', function (req, res, next) {
 /* GET tablelist page. */
 router.get('/table', function (req, res, next) {
   if (req.session && req.session.user) {
+    console.log(req.session.user)
     res.render('table');
   } else {
     req.session.reset();
@@ -44,8 +46,15 @@ router.get('/table', function (req, res, next) {
 });
 
 
-// =====================================================registeration deatils inserting ================================================
+// ================================================================ logout ============================================================
+router.get('/logout', function (req, res, next) {
+  req.session.reset();
+  res.redirect("/");
+})
 
+// ================================================================ //logout ============================================================
+
+// =====================================================registeration deatils inserting ================================================
 router.post("/register", function (req, res) {
   collection.findOne({
     "Email": req.body.Email
@@ -68,7 +77,6 @@ router.post("/register", function (req, res) {
 // =====================================================================================================================================
 
 //=============================================================login details============================================================
-
 router.post('/login', function (req, res) {
   collection.findOne({
     "Email": req.body.Email,
@@ -85,8 +93,7 @@ router.post('/login', function (req, res) {
 
 // ========================================================== //login details==========================================================
 
-// ========================================================== Tablelist ==============================================================
-
+// ========================================================== Insert Tablelist ========================================================
 router.post("/info", function (req, res) {
   if (req.session && req.session.user) {
     req.body.user = req.session.user.Username;
@@ -102,10 +109,9 @@ router.post("/info", function (req, res) {
   }
 })
 
-// ========================================================== Tablelist ==============================================================
+// ========================================================== //Insert Tablelist ======================================================
 
-// ========================================================== Fetch tablelist=========================================================
-
+// ========================================================== Fetch tablelist==========================================================
 router.get('/tablelist', function (req, res) {
   if (req.session && req.session.user) {
     if (req.session.user.role = "user") {
@@ -118,15 +124,16 @@ router.get('/tablelist', function (req, res) {
           res.send(docs)
         }
       })
+    } else {
+      collection1.find({}, function (error, docs) {
+        if (error) {
+          res.sendStatus(500)
+        } else {
+          console.log(docs)
+          res.send(docs)
+        }
+      })
     }
-    collection1.find({}, function (error, docs) {
-      if (error) {
-        res.sendStatus(500)
-      } else {
-        console.log(docs)
-        res.send(docs)
-      }
-    })
   }
 })
 
