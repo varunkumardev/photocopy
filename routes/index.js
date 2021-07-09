@@ -45,6 +45,25 @@ router.get('/table', function (req, res, next) {
   }
 });
 
+/* complaint page*/
+router.get('/complaints', function (req, res, next) {
+  if (req.session && req.session.user) {
+    res.render("complaints");
+  } else {
+    req.session.reset();
+    res.redirect("/");
+  }
+})
+
+/*contact page*/
+router.get('/contact', function (req, res, next) {
+  if (req.session && req.session.user) {
+    res.render("contact");
+  } else {
+    req.session.reset();
+    res.redirect("/");
+  }
+})
 
 // ================================================================ logout ============================================================
 router.get('/logout', function (req, res, next) {
@@ -139,7 +158,21 @@ router.get('/tablelist', function (req, res) {
 
 // ========================================================== //Fetch tablelist =====================================================
 
-
-
+//=========================================================== //counting ============================================================
+router.get('/countdata', function (req, res, next) {
+  if (req.session && req.session.user) {
+    collection1.find({
+      "Single_Side_Pages": ""
+    }, function (error, docs) {
+      if (error) {
+        res.sendStatus(500)
+      } else {
+        // d.push(docs)
+        console.log(docs)
+        res.send(docs)
+      }
+    })
+  }
+})
 
 module.exports = router;
