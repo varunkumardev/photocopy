@@ -4,6 +4,8 @@ var monk = require('monk');
 var db = monk('localhost:27017/xerox');
 var collection = db.get('login_credentials');
 var collection1 = db.get('employee_info');
+var collection2 = db.get('Complaints');
+
 
 /* GET login page. */
 router.get('/', function (req, res, next) {
@@ -159,7 +161,7 @@ router.get('/tablelist', function (req, res) {
 // ========================================================== //Fetch tablelist =====================================================
 
 //=========================================================== //counting ============================================================
-router.get('/countdata', function (req, res, next) {
+router.get('/countdata', function (req, res) {
   if (req.session && req.session.user) {
     collection1.find({
       "Single_Side_Pages": ""
@@ -173,6 +175,25 @@ router.get('/countdata', function (req, res, next) {
       }
     })
   }
+})
+
+//=========================================================== //counting ============================================================
+
+//=========================================================== complaint ============================================================
+
+router.post("/issue", function (req, res) {
+  // if (req.session && req.session.user) {
+    // req.body.user = req.session.user.Username;
+    
+    collection2.insert(req.body, function (error, docs) {
+      if (error) {
+        res.sendStatus(500)
+      } else {
+        console.log(docs)
+        res.sendStatus(200)
+      }
+    })
+  // }
 })
 
 module.exports = router;

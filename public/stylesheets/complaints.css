@@ -1,0 +1,17 @@
+.form-control{
+    border: 1px solid rgb(160, 154, 154);
+}
+
+.form-group{
+    padding-left: 30px;
+
+}
+.pro{
+    text-align: center;
+    color: orangered;
+    padding-top: 10px;
+}
+
+.special{
+    border-bottom: blue;
+}

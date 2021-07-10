@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Contact</title>
+    <title>Contact Us</title>
     <meta content='width=device-width, initial-scale=1.0' name='viewport' />
 
     <!--     Fonts and icons     -->
@@ -17,12 +17,12 @@
     <!-- CSS Files -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="/stylesheets/dataentry.css"> -->
+    <link rel="stylesheet" href="/stylesheets/contact.css">
     <script src="/javascripts/main.js"></script>
 
 </head>
 
-<body ng-app='myapp' ng-controller='myctrl' ng-init="getdata()">
+<body ng-app='myapp' ng-controller='myctrl'>
     <div class="wrapper ">
         <div class="sidebar" data-color="orange">
             <!--
@@ -131,131 +131,95 @@
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="title">Edit Profile</h5>
+                                <h5 class="title">Contact Us</h5>
                             </div>
                             <div class="card-body">
-                                <form>
+                                <div class="container">
                                     <div class="row">
-                                        <div class="col-md-5 pr-1">
-                                            <div class="form-group">
-                                                <label>Company (disabled)</label>
-                                                <input type="text" class="form-control" disabled=""
-                                                    placeholder="Company" value="Creative Code Inc.">
+                                        <div class="col-md-6 d-flex align-items-stretch">
+                                            <div class="info-box">
+                                                <h3><i class="fas fa-map-marker-alt"></i><strong> My Address</strong>
+                                                </h3>
+                                                <p>ADB Road, Aditya Nagar, Surampalem, Andhra Pradesh, 533437.
+                                                    Aditya Engineering College.</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-3 px-1">
-                                            <div class="form-group">
-                                                <label>Username</label>
-                                                <input type="text" class="form-control" placeholder="Username"
-                                                    value="michael23">
+                                        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
+                                            <div class="info-box ">
+                                                <h3> <i class="fas fa-share-alt-square"></i><strong> Social
+                                                        Profiles</strong></h3>
+                                                <div class="social-links ib">
+                                                    <a href="#" class="twitter" title="Twitter"><i
+                                                            class="fab fa-3x fa-twitter"></i></a>
+                                                    <a href="#" class="facebook" title="facebook"><i
+                                                            class="fab fa-3x fa-facebook"></i></a>
+                                                    <a href="#" class="instagram" title="instagram"><i
+                                                            class="fab fa-3x fa-instagram"></i></a>
+                                                    <a href="#" class="google-plus" title="skype"><i
+                                                            class="fab fa-3x fa-skype"></i></a>
+                                                    <a href="#" class="linkedin" title="linkedin"><i
+                                                            class="fab fa-3x fa-linkedin"></i></a>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4 pl-1">
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Email address</label>
-                                                <input type="email" class="form-control" placeholder="Email">
+                                        <div class="col-md-6 mt-4 d-flex align-items-stretch">
+                                            <div class="info-box">
+                                                <h3> <i class="far fa-envelope"></i><strong> Email Me</strong></h3>
+                                                <p><i>contact@example.com</i></p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 pr-1">
-                                            <div class="form-group">
-                                                <label>First Name</label>
-                                                <input type="text" class="form-control" placeholder="Company"
-                                                    value="Mike">
+                                        <div class="col-md-6 mt-4 d-flex align-items-stretch">
+                                            <div class="info-box ib">
+                                                <h3> <i class="fas fa-phone-volume"></i><strong> Call Me</strong></h3>
+                                                <p>+91 9949876662</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-6 pl-1">
-                                            <div class="form-group">
-                                                <label>Last Name</label>
-                                                <input type="text" class="form-control" placeholder="Last Name"
-                                                    value="Andrew">
+                                    </div><br>
+                                    <form action="">
+                                        <div class="row">
+                                            <div class="col-md-6 form-group">
+                                                <input type="text" name="name" class="form-control" id="name"
+                                                    placeholder="Your Name" required>
+                                            </div>
+                                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                                <input type="email" class="form-control" name="email" id="email"
+                                                    placeholder="Your Email" required>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Address</label>
-                                                <input type="text" class="form-control" placeholder="Home Address"
-                                                    value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
-                                            </div>
+                                        <div class="form-group mt-3">
+                                            <input type="text" class="form-control" name="subject" id="subject"
+                                                placeholder="Subject" required>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4 pr-1">
-                                            <div class="form-group">
-                                                <label>City</label>
-                                                <input type="text" class="form-control" placeholder="City" value="Mike">
-                                            </div>
+                                        <div class="form-group mt-3">
+                                            <textarea class="form-control"
+                                                style="outline: 1px solid rgb(160, 154, 154);" name="message" rows="5"
+                                                placeholder="Message" required></textarea>
                                         </div>
-                                        <div class="col-md-4 px-1">
-                                            <div class="form-group">
-                                                <label>Country</label>
-                                                <input type="text" class="form-control" placeholder="Country"
-                                                    value="Andrew">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 pl-1">
-                                            <div class="form-group">
-                                                <label>Postal Code</label>
-                                                <input type="number" class="form-control" placeholder="ZIP Code">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>About Me</label>
-                                                <textarea rows="4" cols="80" class="form-control"
-                                                    placeholder="Here can be your description"
-                                                    value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
+                                        <!-- <div class="my-3">
+                                            <div class="loading">Loading</div>
+                                            <div class="error-message"></div>
+                                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                                        </div> -->
+                                        <div class="text-center"><button class="btn" type="submit"
+                                                style="background-color: coral;">Send Message</button></div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card card-user">
-                            <div class="image">
-                                <img src="../assets/img/bg5.jpg" alt="...">
-                            </div>
                             <div class="card-body">
-                                <div class="author">
-                                    <a href="#">
-                                        <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
-                                        <h5 class="title">Mike Andrew</h5>
-                                    </a>
-                                    <p class="description">
-                                        michael24
-                                    </p>
-                                </div>
-                                <p class="description text-center">
-                                    "Lamborghini Mercy <br>
-                                    Your chick she so thirsty <br>
-                                    I'm in that two seat Lambo"
-                                </p>
-                            </div>
-                            <hr>
-                            <div class="button-container">
-                                <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
-                                    <i class="fab fa-facebook-f"></i>
-                                </button>
-                                <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
-                                    <i class="fab fa-twitter"></i>
-                                </button>
-                                <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
-                                    <i class="fab fa-google-plus-g"></i>
-                                </button>
-                            </div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15254.62187331351!2d82.0667949!3d17.0894972!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x481e8b12b4b80715!2sAditya%20Engineering%20College!5e0!3m2!1sen!2sin!4v1625890773969!5m2!1sen!2sin"
+                                width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
+
+    </div>
     </div>
 
 </body>

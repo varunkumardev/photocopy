@@ -1,0 +1,54 @@
+/* icons style in Social profile*/
+.twitter {
+  padding-left: 20px;
+  padding-right: 5px;
+}
+
+.facebook {
+  padding-right: 5px;
+}
+
+.instagram {
+  padding-right: 5px;
+}
+
+.google-plus {
+  padding-right: 5px;
+}
+
+.linkedin {
+  padding-right: 5px;
+}
+.fas,
+.fab,
+.far {
+  color: coral;
+}
+/* End icons style */
+.btn {
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #ff7f50;
+  padding: 10px 10px 10px 11px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.info-box {
+  padding-left: 10px;
+}
+
+.ib{
+    padding-left: 10px;
+  }
+  
+  .form-control{
+      border: 1px solid rgb(160, 154, 154);
+  }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Report</title>
+    <title>Complaints</title>
     <meta content='width=device-width, initial-scale=1.0' name='viewport' />
 
     <!--     Fonts and icons     -->
@@ -17,13 +17,13 @@
     <!-- CSS Files -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
-    <link rel="stylesheet" href="/stylesheets/dataentry.css">
+    <link rel="stylesheet" href="/stylesheets/complaints.css">
     <script src="/javascripts/main.js"></script>
 
 </head>
 
 
-<body ng-app='myapp' ng-controller='myctrl' ng-init='count()'>
+<body ng-app='myapp' ng-controller='myctrl'>
     <div class="wrapper ">
         <div class="sidebar" data-color="orange">
             <div class="logo">
@@ -126,8 +126,8 @@
             <div class="panel-header">
                 <div class="header text-center">
                     <h2 class="title">Queries</h2>
-                    <p class="category">Handcrafted by our friend <a target="_blank" href="">Robert McIntosh</a>. Please
-                        checkout the <a href="" target="_blank">full documentation.</a>
+                    <p class="category">Any Queries Recieved From this site will take 2 days to resolve. Please
+                        checkout the Status after 2 days
                     </p>
                 </div>
             </div>
@@ -135,27 +135,86 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-1"></div>
-                                <div class="col-md-5">
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-10" for="date"><b>Date:</b></label>
-                                        <div class="col-sm-10">
-                                            <input type="date" class="form-control" name="date"
-                                                ng-model="info.Date">
+                            <h4 class="pro">Problem statement</h4>
+                            <div class="container-fluid">
+                                </br>
+                                <form action="">
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-10"
+                                                    for="name"><b>Username:</b></label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name="name" id="name"
+                                                        placeholder="Enter Your Name" ng-model='query.Name'>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-10" for="user_id"><b>User
+                                                        Id:</b></label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="Enter Your Id"
+                                                        name="user_id" id="user_id" ng-model='query.User_ID'>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></br>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-10" for="issue"><b>Issue
+                                                        Type:</b></label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-control" name="issue" id="issue" ng-model='query.issue_type'>
+                                                        <option value="Repair">Repair</option>
+                                                        <option value="Bundels">Bundels</option>
+                                                        <option value="others">others</option>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-10" for="phone"><b>Mobile
+                                                        Number:</b></label>
+                                                <div class="col-sm-10">
+                                                    <input type="number" class="form-control"
+                                                        placeholder="Enter Mobile Number" name="phone" id="phone"
+                                                        ng-model='query.Mobile_Number'>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-11">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-10"
+                                                    for="description"><b>Issue:</b></label>
+                                                <div class="col-sm-10">
+                                                    <textarea class="form-control" name="description"
+                                                        id="description" placeholder="Write Your Problem" ng-model="query.Problem"></textarea>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-5">
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-10" for=""><b>Single Side
-                                                Pages:</b></label>
-                                        <div class="col-sm-10">
-                                            <input type="number" class="form-control" placeholder="Enter Count"
-                                                name="" ng-model="info.Single_Side_Pages">
+                                    <div class="row">
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-5" style="margin: 0 auto;">
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-6 col-sm-10">
+                                                    <button type="button" class="btn btn-primary"
+                                                        ng-click="complaint(query)">Submit</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
